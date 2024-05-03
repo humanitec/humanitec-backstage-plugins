@@ -1,0 +1,26 @@
+name: Node.js CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    env:
+      NODE_OPTIONS: --max-old-space-size=4096
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - run: yarn install --frozen-lockfile
+      - run: yarn lint:all
+      - run: yarn tsc
+      - run: yarn test:all
+      - run: yarn build:all
