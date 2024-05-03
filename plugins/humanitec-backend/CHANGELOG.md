@@ -1,5 +1,16 @@
 # @frontside/backstage-plugin-humanitec-backend
 
+## 0.4.0
+
+### Minor Changes
+
+- 29a9ee0: moved plugin into humanitec organization
+
+### Patch Changes
+
+- Updated dependencies [29a9ee0]
+  - @humanitec/backstage-plugin-common@0.4.0
+
 ## 0.3.17
 
 ### Patch Changes
