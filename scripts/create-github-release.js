@@ -53,9 +53,9 @@ if (!BOOL_CREATE_RELEASE) {
 }
 
 const GH_OWNER = 'backstage';
-const GH_REPO = 'backstage';
+const GH_REPO = 'humanitec-backstage-plugins';
 const EXPECTED_COMMIT_MESSAGE = /^Merge pull request #(?<prNumber>[0-9]+) from/;
-const CHANGESET_RELEASE_BRANCH = 'backstage/changeset-release/master';
+const CHANGESET_RELEASE_BRANCH = 'humanitec-backstage-plugins/changeset-release/main';
 
 // Initialize a GitHub client
 const octokit = new Octokit({
@@ -95,7 +95,7 @@ async function getCommitUsingTagName(tagName) {
   }
   const commitSha = tagData.data.object.sha;
   console.log(
-    `The commit for the tag is https://github.com/backstage/backstage/commit/${commitSha}`,
+    `The commit for the tag is https://github.com/humanitec/humanitec-backstage-plugins/commit/${commitSha}`,
   );
 
   // Get the commit message using the commit SHA
@@ -113,7 +113,7 @@ async function getCommitUsingTagName(tagName) {
   }
 
   // Example Commit Message
-  // Merge pull request #3555 from backstage/changeset-release/master Version Packages
+  // Merge pull request #3555 from humanitec-backstage-plugins/changeset-release/main Version Packages
   return { sha: commitSha, message: commitData.data.message };
 }
 
@@ -145,7 +145,7 @@ async function getReleaseDescriptionFromCommit(commit) {
     // Get the PR description from the commit message
     const prNumber = commit.message.match(expectedMessage).groups.prNumber;
     console.log(
-      `Identified the changeset Pull request - https://github.com/backstage/backstage/pull/${prNumber}`,
+      `Identified the changeset Pull request - https://github.com/humanitec/humanitec-backstage-plugins/pull/${prNumber}`,
     );
 
     const { data } = await octokit.pulls.get({
