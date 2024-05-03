@@ -1,19 +1,19 @@
-# @frontside/backstage-plugin-humanitec-backend
+# @humanitec/backstage-plugin-backend
 
-`@frontside/backstage-plugin-humanitec-backend` is a plugin for the Backstage backend app. It provides a route that `@frontside/backstage-plugin-humanitec` will use to connect to Humanitec API and scaffolder actions.
+`@humanitec/backstage-plugin-backend` is a plugin for the Backstage backend app. It provides a route that `@humanitec/backstage-plugin` will use to connect to Humanitec API and scaffolder actions.
 
 ## Installation
 
-1. Install `@frontside/backstage-plugin-humanitec-backend` plugin with,
+1. Install `@humanitec/backstage-plugin-backend` plugin with,
 
 ```bash
-yarn workspace backend add @frontside/backstage-plugin-humanitec-backend
+yarn workspace backend add @humanitec/backstage-plugin-backend
 ```
 
 2. Create `./packages/backend/src/plugins/humanitec.ts` with the following content,
 
 ```ts
-import { createRouter } from '@frontside/backstage-plugin-humanitec-backend';
+import { createRouter } from '@humanitec/backstage-plugin-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 
@@ -57,7 +57,7 @@ This plugin provides the following scaffolder actions,
 
 ### create-app
 
-`create-app` will create an app in Humanitec with specific workloads and automation. 
+`create-app` will create an app in Humanitec with specific workloads and automation.
 
 #### Installation
 
@@ -65,7 +65,7 @@ To make this action available, you can add it to your scaffolder plugin configur
 
 ```diff
 # import createHumanitecApp action
-+ import { createHumanitecApp } from "@frontside/backstage-plugin-humanitec-backend";
++ import { createHumanitecApp } from "@humanitec/backstage-plugin-backend";
 
 # register the action
   const actions = [
