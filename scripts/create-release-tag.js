@@ -22,8 +22,8 @@ const fs = require('fs-extra');
 const { EOL } = require('os');
 
 const baseOptions = {
-  owner: 'backstage',
-  repo: 'backstage',
+  owner: 'humanitec',
+  repo: 'humanitec-backstage-plugins',
 };
 
 async function getCurrentReleaseTag() {
