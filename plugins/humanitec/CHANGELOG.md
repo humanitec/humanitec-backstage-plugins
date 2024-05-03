@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.4.0
+
+### Minor Changes
+
+- cfbf3d5: moved plugin into humanitec organization
+
 ## 0.3.15
 
 ### Patch Changes
