@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.4.1
+
+### Patch Changes
+
+- db392f8: re-release with fixed release script
+
 ## 0.4.0
 
 ### Minor Changes
