@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 
-import { createHumanitecClient, fetchAppInfo } from '@frontside/backstage-plugin-humanitec-common';
+import { createHumanitecClient, fetchAppInfo } from '@humanitec/backstage-plugin-common';
 
 const defaultFetchInterval = 10000;
 
