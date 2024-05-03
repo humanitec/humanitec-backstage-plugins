@@ -1,5 +1,5 @@
 import { setTimeout } from 'node:timers/promises';
-import * as common from '@frontside/backstage-plugin-humanitec-common';
+import * as common from '@humanitec/backstage-plugin-common';
 
 import { AppInfoService } from './app-info-service';
 
@@ -11,7 +11,7 @@ let slowFetch = false
 const fakeAppInfo = { fake: 'res' }
 const fakeError = new Error('fake error');
 
-jest.mock('@frontside/backstage-plugin-humanitec-common', () => ({
+jest.mock('@humanitec/backstage-plugin-common', () => ({
   createHumanitecClient: jest.fn(),
   fetchAppInfo: jest.fn(async () => {
     if (returnError) {

@@ -1,25 +1,25 @@
-# @frontside/backstage-plugin-humanitec
+# @humanitec/backstage-plugin
 
-`@frontside/backstage-plugin-humanitec` is a plugin for the Backstage frontend app. It shows information about environments, workloads and resources on an entity page.
+`@humanitec/backstage-plugin` is a plugin for the Backstage frontend app. It shows information about environments, workloads and resources on an entity page.
 
 ![screenshot](./screenshot.png)
 
 ## Requirements
 
-This plugin requires `@frontside/backstage-plugin-humanitec-backend` because it connects to the backend to make requests to the Humanitec API.
+This plugin requires `@humanitec/backstage-plugin-backend` because it connects to the backend to make requests to the Humanitec API.
 
 ## Installation
 
 First, install the plugin to your backstage app:
 
 ```bash
-yarn workspace app add @frontside/backstage-plugin-humanitec
+yarn workspace app add @humanitec/backstage-plugin
 ```
 
 Then in your Entity Page (`./packages/app/src/components/catalog/EntityPage.tsx`) add the `HumanitecCardComponent`:
 
 ```diff
-+ import { HumanitecCardComponent } from '@frontside/backstage-plugin-humanitec';
++ import { HumanitecCardComponent } from '@humanitec/backstage-plugin';
 ...
 const overviewContent = (
   <Grid container>

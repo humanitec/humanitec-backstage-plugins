@@ -1,4 +1,4 @@
-# @frontside/plugin-humanitec-api-client-common
+# @humanitec/backstage-plugin-common
 
 Welcome to the common package for the humanitec-api-client plugin!
 

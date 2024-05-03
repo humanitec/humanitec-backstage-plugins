@@ -1,6 +1,6 @@
 import { EventSourcePolyfill } from "event-source-polyfill";
 import { configApiRef, discoveryApiRef, useApi, identityApiRef } from '@backstage/core-plugin-api';
-import type { FetchAppInfoResponse } from '@frontside/backstage-plugin-humanitec-common';
+import type { FetchAppInfoResponse } from '@humanitec/backstage-plugin-common';
 import { useEffect, useState } from 'react';
 import { HUMANITEC_MISSING_ANNOTATION_ERROR } from '../annotations';
 
