@@ -57,6 +57,7 @@ import {
 
 import { TechDocsAddons } from '@backstage/plugin-techdocs-react';
 import { ReportIssue } from '@backstage/plugin-techdocs-module-addons-contrib';
+import { HumanitecCardComponent } from '@frontside/backstage-plugin-humanitec';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -137,6 +138,9 @@ const overviewContent = (
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
     </Grid>
+    <Grid item md={6}>
+     <HumanitecCardComponent />
+   </Grid>
   </Grid>
 );
 

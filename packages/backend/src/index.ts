@@ -7,6 +7,7 @@
  */
 
 import { createBackend } from '@backstage/backend-defaults';
+import { legacyPlugin } from '@backstage/backend-common';
 
 const backend = createBackend();
 
@@ -37,5 +38,8 @@ backend.add(
 backend.add(import('@backstage/plugin-search-backend/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-catalog/alpha'));
 backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
+
+// humanitec
+backend.add(legacyPlugin('humanitec', import('./plugins/humanitec')));
 
 backend.start();
