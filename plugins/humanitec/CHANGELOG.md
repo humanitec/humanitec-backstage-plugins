@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.5.1
+
+### Patch Changes
+
+- 88ffe8c: updated dependencies
+
 ## 0.5.0
 
 ### Minor Changes
