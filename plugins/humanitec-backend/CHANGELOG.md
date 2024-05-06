@@ -1,5 +1,16 @@
 # @frontside/backstage-plugin-humanitec-backend
 
+## 0.5.0
+
+### Minor Changes
+
+- fd2bf92: re-release 0.4.0 due to an issue during publish, see 0.4.0 for changes
+
+### Patch Changes
+
+- Updated dependencies [fd2bf92]
+  - @humanitec/backstage-plugin-common@0.5.0
+
 ## 0.4.0
 
 ### Minor Changes
