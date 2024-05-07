@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-backend
 
+## 0.6.1
+
+### Patch Changes
+
+- ef208e6: update installation instructions
+
 ## 0.6.0
 
 ### Minor Changes
