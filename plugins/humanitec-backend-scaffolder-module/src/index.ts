@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export * from './service/router';
-export { humanitecPlugin as default } from './plugin';
+
+export { humanitecModule as default } from './module';
