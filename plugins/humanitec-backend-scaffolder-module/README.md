@@ -18,7 +18,15 @@ This plugin provides the following scaffolder actions:
 yarn workspace backend add @humanitec/backstage-plugin-scaffolder-backend-module
 ```
 
-2. Add configuration to `app-config.yaml`
+1. Add the plugin in `./packages/backend/src/index.ts` to your backend,
+
+```diff
++ backend.add(import('@humanitec/backstage-plugin-scaffolder-backend-module'));
+
+backend.start();
+```
+
+1. Add configuration to `app-config.yaml`
 
 ```diff
 humanitec:
