@@ -10,40 +10,15 @@
 yarn workspace backend add @humanitec/backstage-plugin-backend
 ```
 
-2. Create `./packages/backend/src/plugins/humanitec.ts` with the following content,
-
-```ts
-import { createRouter } from '@humanitec/backstage-plugin-backend';
-import { Router } from 'express';
-import { PluginEnvironment } from '../types';
-
-export default async function createPlugin(
-  env: PluginEnvironment,
-): Promise<Router> {
-  return await createRouter({
-    logger: env.logger,
-    config: env.config,
-  });
-}
-```
-
-3. Add `humanitec` api route to `./packages/backend/src/index.ts`.
+1. Add the plugin in `./packages/backend/src/index.ts` to your backend,
 
 ```diff
-# Import humanitec plugin from `./plugins/humanitec.ts`
-import search from './plugins/search';
-+ import humanitec from './plugins/humanitec';
++ backend.add(import('@humanitec/backstage-plugin-backend'));
 
-# Create Humanitec environment
-const searchEnv = useHotMemoize(module, () => createEnv('search'));
-+ const humanitecEnv = useHotMemoize(module, () => createEnv('humanitec'));
-
-# Add Humanitec to the router
-apiRouter.use('/search', await search(searchEnv));
-+ apiRouter.use('/humanitec', await humanitec(humanitecEnv));
+backend.start();
 ```
 
-4. Add configuration to `app-config.yaml`
+1. Add configuration to `app-config.yaml`
 
 ```diff
 humanitec:
