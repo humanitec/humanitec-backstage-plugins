@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-backend
 
+## 0.6.0
+
+### Minor Changes
+
+- 9049a75: Extract scaffolder actions and use new backend system
+
 ## 0.5.1
 
 ### Patch Changes
