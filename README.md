@@ -3,7 +3,8 @@
 This repository contains [Backstage](https://backstage.io/) plugins to interact with the [Humanitec Platform Orchestrator](https://developer.humanitec.com/platform-orchestrator/overview/) from your Backstage Portal.
 
 * [humanitec](./plugins/humanitec) Show workloads, environments and resources deployed by Humanitec Platform Orchestrator.
-* [humanitec-backend](./plugins/humanitec-backend) Backend API route and scaffolder actions.
+* [humanitec-backend](./plugins/humanitec-backend) Backend API route.
+* [humanitec-backend-scaffolder-module](./plugins/humanitec-backend-scaffolder-module) Scaffolder actions.
 
 ## Development
 

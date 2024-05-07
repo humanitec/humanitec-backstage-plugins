@@ -15,5 +15,4 @@
  */
 
 export * from './service/router';
-export * from './actions/create-app';
 export { humanitecPlugin as default } from './plugin';

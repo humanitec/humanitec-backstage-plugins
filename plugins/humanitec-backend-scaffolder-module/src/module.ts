@@ -18,7 +18,7 @@ import {
   coreServices,
 } from '@backstage/backend-plugin-api';
 import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-node/alpha';
-import { createHumanitecApp } from '@frontside/backstage-plugin-humanitec-backend';
+import { createHumanitecApp } from './actions/create-app';
 
 /**
  * @public

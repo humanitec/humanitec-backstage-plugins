@@ -1,4 +1,4 @@
-import { createTemplateAction } from '@backstage/plugin-scaffolder-backend';
+import { TemplateAction, createTemplateAction } from '@backstage/plugin-scaffolder-node';
 import { stat, readFile } from 'fs/promises';
 import { join, resolve } from 'path';
 import { loadAll } from 'js-yaml';
@@ -9,7 +9,7 @@ interface HumanitecCreateApp {
   token: string;
 }
 
-export function createHumanitecApp({ token, orgId }: HumanitecCreateApp) {
+export function createHumanitecApp({ token, orgId }: HumanitecCreateApp): TemplateAction<any, any> {
   return createTemplateAction<{ appId: string; setupFile: string; }>({
     id: 'humanitec:create-app',
     schema: {
@@ -23,7 +23,8 @@ export function createHumanitecApp({ token, orgId }: HumanitecCreateApp) {
         },
       }
     },
-    async handler({ logger, input, workspacePath }) {
+    async handler(ctx) {
+      const { input, workspacePath, logger } = ctx;
       const client = createHumanitecClient({ orgId, token });
 
       const setupFile = input.setupFile ?? 'humanitec-apps.yaml';

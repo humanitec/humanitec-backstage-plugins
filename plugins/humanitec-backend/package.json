@@ -22,23 +22,20 @@
     "postpack": "backstage-cli package postpack"
   },
   "dependencies": {
-    "@backstage/backend-plugin-api": "^0.6.13",
     "@backstage/backend-common": "^0.21.7",
+    "@backstage/backend-plugin-api": "^0.6.17",
     "@backstage/config": "^1.2.0",
-    "@backstage/plugin-scaffolder-backend": "^1.22.5",
     "@humanitec/backstage-plugin-common": "^0.5.1",
     "@types/express": "*",
     "cross-fetch": "^4.0.0",
     "express": "^4.17.1",
     "express-promise-router": "^4.1.0",
-    "js-yaml": "^4.1.0",
     "node-fetch": "^2.6.7",
     "winston": "^3.2.1",
     "yn": "^4.0.0"
   },
   "devDependencies": {
     "@backstage/cli": "^0.26.3",
-    "@types/js-yaml": "^4.0.5",
     "@types/supertest": "^2.0.8",
     "msw": "^1.0.0",
     "supertest": "^6.2.4"

@@ -1,24 +1,24 @@
-# @frontside/backstage-plugin-humanitec-scaffolder-backend-module
+# @humanitec/backstage-plugin-scaffolder-backend-module
 
-`@frontside/backstage-plugin-humanitec-backend` is a plugin for the Backstage backend app. It provides a route that `@frontside/backstage-plugin-humanitec` will use to connect to Humanitec API and scaffolder actions.
-`@frontside/backstage-plugin-humanitec-scaffolder-backend-module` is a new backend system module to add the humanitec action in the scaffolder
+`@humanitec/backstage-plugin-scaffolder-backend-module` is a new backend system module to add the humanitec action in the scaffolder
 
 ## Scaffolder Actions
 
-This plugin provides the following scaffolder actions,
+This plugin provides the following scaffolder actions:
 
 ### create-app
 
-`create-app` will create an app in Humanitec with specific workloads and automation. 
+`create-app` will create an app in Humanitec with specific workloads and automation.
 
 #### Installation
 
-TBD
+1. Install `@humanitec/backstage-plugin-scaffolder-backend-module` plugin with,
 
-...
+```bash
+yarn workspace backend add @humanitec/backstage-plugin-scaffolder-backend-module
+```
 
-
-4. Add configuration to `app-config.yaml`
+2. Add configuration to `app-config.yaml`
 
 ```diff
 humanitec:

@@ -14,5 +14,5 @@
  * limitations under the License.
  */
 
-export { createHumanitecApp } from '@frontside/backstage-plugin-humanitec-backend';
+
 export { humanitecModule as default } from './module';
