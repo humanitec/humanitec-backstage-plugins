@@ -40,6 +40,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Upload dynamic plugin to release
-        run: ./scripts/upload-dynamic-plugins.sh '${{ steps.changesets.outputs.publishedPackages }}'
+        run: ./scripts/upload-dynamic-plugins.js '${{ steps.changesets.outputs.publishedPackages }}'
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
