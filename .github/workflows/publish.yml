@@ -26,6 +26,8 @@ jobs:
 
       - run: yarn build:all
 
+      - run: ./scripts/build-dynamic-plugins.sh
+
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
@@ -35,4 +37,9 @@ jobs:
           publish: yarn release:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Upload dynamic plugin to release
+        run: ./scripts/upload-dynamic-plugins.sh '${{ steps.changesets.outputs.publishedPackages }}'
+        env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
