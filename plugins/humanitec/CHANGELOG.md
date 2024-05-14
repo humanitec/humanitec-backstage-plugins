@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.5.3
+
+### Patch Changes
+
+- 41fe396: Re-trigger dynamic plugin publish
+
 ## 0.5.2
 
 ### Patch Changes
