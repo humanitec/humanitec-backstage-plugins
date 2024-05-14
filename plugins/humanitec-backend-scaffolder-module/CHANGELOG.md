@@ -1,5 +1,11 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.1.2
+
+### Patch Changes
+
+- 064499e: Publish dynamic plugins
+
 ## 0.1.1
 
 ### Patch Changes
