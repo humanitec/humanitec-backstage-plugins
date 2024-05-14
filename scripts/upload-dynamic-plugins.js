@@ -19,7 +19,8 @@ for (const package of publishedPackages) {
   package.name += '-dynamic'
   console.log(`Publishing package: ${package.name}@${package.version}`);
 
-  const archive  = pathJoin(__dirname, 'output', `${package.name}-${package.version}.tgz`);
+  const archiveName = `${package.name.replace('@humanitec/backstage', 'humanitec-backstage')}-${package.version}.tgz`
+  const archive  = pathJoin(__dirname, 'output', archiveName);
 
   execSync(`npm publish ${archive} --access public`, { stdio: 'inherit' });
 }
