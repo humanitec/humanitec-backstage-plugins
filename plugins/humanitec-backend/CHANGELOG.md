@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-backend
 
+## 0.6.2
+
+### Patch Changes
+
+- 064499e: Publish dynamic plugins
+
 ## 0.6.1
 
 ### Patch Changes
