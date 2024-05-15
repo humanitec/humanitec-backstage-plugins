@@ -39,7 +39,7 @@
     "@backstage/plugin-search-backend-node": "^1.2.21",
     "@backstage/plugin-techdocs-backend": "^1.10.4",
     "@humanitec/backstage-plugin-backend": "^0.6.3",
-    "@humanitec/backstage-plugin-scaffolder-backend-module": "^0.2.0",
+    "@humanitec/backstage-plugin-scaffolder-backend-module": "^0.3.0",
     "app": "link:../app",
     "better-sqlite3": "^9.0.0",
     "dockerode": "^3.3.1",

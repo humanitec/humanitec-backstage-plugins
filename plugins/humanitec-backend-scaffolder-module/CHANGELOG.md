@@ -1,5 +1,11 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.3.0
+
+### Minor Changes
+
+- 5a41696: Enable forwarding of githubOrgId
+
 ## 0.2.0
 
 ### Minor Changes
