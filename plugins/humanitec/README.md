@@ -10,6 +10,8 @@ This plugin requires `@humanitec/backstage-plugin-backend` because it connects t
 
 ## Installation
 
+### Entity card
+
 First, install the plugin to your backstage app:
 
 ```bash
@@ -58,3 +60,25 @@ humanitec:
 ```
 
 When you start your backstage app be sure to pass in `HUMANITEC_TOKEN` that you must generate from your Humanitec dashboard.
+
+### Scaffolding field extension
+
+For an enhanced scaffolding experience (`./packages/app/src/App.tsx`) add the `ValidateHumanitecAppIDFieldExtension`, which validates that the provided input is a valid Humanitec Application ID.
+
+```diff
++ import { ValidateHumanitecAppIDFieldExtension } from '@humanitec/backstage-plugin';
+...
+const routes = (
+  <FlatRoutes>
+    ...
+    <Route path="/create" element={<ScaffolderPage />}>
+      <ScaffolderFieldExtensions>
++       <ValidateHumanitecAppIDFieldExtension />
+      </ScaffolderFieldExtensions>
+    </Route>
+    ...
+  </FlatRoutes>
+)
+```
+
+Once this has been added, `ui:field: ValidateHumanitecAppID` is available inside scaffolding templates.

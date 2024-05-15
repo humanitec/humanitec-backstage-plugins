@@ -45,6 +45,10 @@ Add the action to your template,
 +      input:
 +        setupFile: humanitec-apps.yaml
 +        appId: ${{ parameters.componentName }}
+
++    - name: Fetch configured humanitec.orgId
++      id: humanitec-environment
++      action: humanitec:get-environment
 ```
 
 ### setupFile parameter
