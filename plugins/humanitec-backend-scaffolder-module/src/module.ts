@@ -19,6 +19,7 @@ import {
 } from '@backstage/backend-plugin-api';
 import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-node/alpha';
 import { createHumanitecApp } from './actions/create-app';
+import { createGetEnvironmentAction } from './actions/get-environment';
 
 /**
  * @public
@@ -38,6 +39,10 @@ export const humanitecModule = createBackendModule({
           createHumanitecApp({
             orgId: config.getString('humanitec.orgId'),
             token: config.getString('humanitec.token')
+          }),
+          createGetEnvironmentAction({
+            orgId: config.getString('humanitec.orgId'),
+            cloudProvider: config.getOptionalString('humanitec.cloudProvider'),
           }),
         );
       },
