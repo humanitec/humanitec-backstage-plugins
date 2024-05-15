@@ -3,9 +3,10 @@ import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
 interface EnvironmentAction {
   orgId: string
   cloudProvider?: string
+  githubOrgId?: string
 }
 
-export function createGetEnvironmentAction({ orgId, cloudProvider }: EnvironmentAction) {
+export function createGetEnvironmentAction({ orgId, cloudProvider, githubOrgId }: EnvironmentAction) {
   return createTemplateAction({
     id: 'humanitec:get-environment',
     schema: {
@@ -20,6 +21,9 @@ export function createGetEnvironmentAction({ orgId, cloudProvider }: Environment
           cloudProvider: {
             type: 'string'
           },
+          githubOrgId: {
+            type: 'string'
+          },
           githubOIDCCustomization: {
             type: 'object'
           }
@@ -29,6 +33,7 @@ export function createGetEnvironmentAction({ orgId, cloudProvider }: Environment
     handler: async (ctx) => {
       ctx.output('orgId', orgId);
       ctx.output('cloudProvider', cloudProvider);
+      ctx.output('githubOrgId', githubOrgId);
 
       let githubOIDCCustomization
       if (cloudProvider === 'azure') {

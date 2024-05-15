@@ -43,6 +43,7 @@ export const humanitecModule = createBackendModule({
           createGetEnvironmentAction({
             orgId: config.getString('humanitec.orgId'),
             cloudProvider: config.getOptionalString('humanitec.cloudProvider'),
+            githubOrgId: config.getOptionalString('humanitec.githubOrgId'),
           }),
         );
       },
