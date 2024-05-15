@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.6.0
+
+### Minor Changes
+
+- f3c0fd4: Include scaffolding helpers from [humanitec-architecture/backstage](https://github.com/humanitec-architecture/backstage)
+
 ## 0.5.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.2.0
+
+### Minor Changes
+
+- f3c0fd4: Include scaffolding helpers from [humanitec-architecture/backstage](https://github.com/humanitec-architecture/backstage)
+
 ## 0.1.3
 
 ### Patch Changes
