@@ -2,7 +2,12 @@ import { useEntity } from '@backstage/plugin-catalog-react';
 import { Button, Card, CardContent, Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
 import React, { ReactNode } from 'react';
-import { HUMANITEC_APP_ID_ANNOTATION, HUMANITEC_MISSING_ANNOTATION_ERROR, HUMANITEC_ORG_ID_ANNOTATION } from '../annotations';
+import { Entity } from '@backstage/catalog-model';
+import {
+  HUMANITEC_APP_ID_ANNOTATION,
+  HUMANITEC_MISSING_ANNOTATION_ERROR,
+  HUMANITEC_ORG_ID_ANNOTATION,
+} from '../annotations';
 import { useAppInfo } from '../hooks/useAppInfo';
 import { useHumanitecParams } from '../hooks/useHumanitecParams';
 import { useStyles } from '../hooks/useStyles';
@@ -12,10 +17,9 @@ import { HumanitecCardContent } from './HumanitecCardContent';
 import { HumanitecErrorState } from './HumanitecErrorState';
 import { HumanitecLogoIcon } from './HumanitecLogoIcon';
 
-interface HumanitecCardComponentProps {
-}
+interface HumanitecCardComponentProps {}
 
-export function HumanitecCardComponent({ }: HumanitecCardComponentProps) {
+export function HumanitecCardComponent({}: HumanitecCardComponentProps) {
   const { entity } = useEntity<HumanitecAnnotationedEntity>();
 
   const orgId = entity.metadata.annotations[HUMANITEC_ORG_ID_ANNOTATION];
@@ -41,11 +45,14 @@ export function HumanitecCardComponent({ }: HumanitecCardComponentProps) {
         selectedWorkload={params?.workloadId}
         actions={actions}
       />
-    )
-  } else if (data instanceof Error && data.message === HUMANITEC_MISSING_ANNOTATION_ERROR) {
-    content = (<HumanitecAnnotationsEmptyState />)
+    );
+  } else if (
+    data instanceof Error &&
+    data.message === HUMANITEC_MISSING_ANNOTATION_ERROR
+  ) {
+    content = <HumanitecAnnotationsEmptyState />;
   } else {
-    content = (<HumanitecErrorState error={data} />)
+    content = <HumanitecErrorState error={data} />;
   }
 
   let action: ReactNode = null;
@@ -54,11 +61,11 @@ export function HumanitecCardComponent({ }: HumanitecCardComponentProps) {
       <Button component="a" startIcon={<HumanitecLogoIcon />} href={appUrl}>
         Humanitec App
       </Button>
-    )
+    );
   }
 
   return (
-    <Card className={`${classes.cardClass}`} >
+    <Card className={`${classes.cardClass}`}>
       <CardHeader
         action={action}
         className={classes.cardHeader}
@@ -70,5 +77,13 @@ export function HumanitecCardComponent({ }: HumanitecCardComponentProps) {
         {content}
       </CardContent>
     </Card>
-  )
+  );
+}
+
+export async function hasHumanitecAnnotations(entity: Entity) {
+  return !!(
+    entity.metadata.annotations &&
+    entity.metadata.annotations[HUMANITEC_ORG_ID_ANNOTATION] &&
+    entity.metadata.annotations[HUMANITEC_APP_ID_ANNOTATION]
+  );
 }

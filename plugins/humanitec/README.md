@@ -33,6 +33,26 @@ const overviewContent = (
 )
 ```
 
+In case the Humanitec component should only be display when the entity has Humanitec annotations configured,
+the code could look like the following:
+
+```diff
++ import { HumanitecCardComponent, hasHumanitecAnnotations } from '@humanitec/backstage-plugin';
+...
+const overviewContent = (
+  <Grid container>
+    ...
++   <EntitySwitch>
++     <EntitySwitch.Case if={hasHumanitecAnnotations}>
++       <Grid item md={6}>
++         <HumanitecCardComponent />
++       </Grid>
++     </EntitySwitch.Case>
++   </EntitySwitch>
+  </Grid>
+)
+```
+
 Add annotations to types that have Humanitec apps display:
 
 ```yaml
