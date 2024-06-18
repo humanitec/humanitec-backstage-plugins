@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-common
 
+## 0.5.2
+
+### Patch Changes
+
+- 6574533: fix: improved status rendering
+
 ## 0.5.1
 
 ### Patch Changes
