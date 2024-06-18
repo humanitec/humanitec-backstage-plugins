@@ -28,12 +28,14 @@ export function HumanitecCardContent({
   const env = environments.find(e => e.id === selectedEnv);
   const resources =
     (selectedWorkload &&
-      env?.resources.filter(resource =>
-        resource.res_id.startsWith(`modules.${selectedWorkload}`),
-      )) ||
+      env?.resources
+        ?.filter(resource =>
+          resource.res_id.startsWith(`modules.${selectedWorkload}`),
+        )
+        .filter(resource => resource.type !== 'workload')) ||
     [];
   const workloads =
-    env?.resources.filter(resource => resource.type === 'workload') || [];
+    env?.resources?.filter(resource => resource.type === 'workload') || [];
 
   return (
     <>
@@ -91,6 +93,11 @@ export function HumanitecCardContent({
                     No workloads reported.
                   </Typography>
                 )}
+                {env && env.usesGitCluster && (
+                  <Typography className={classes.unknownColor}>
+                    No runtime information available for cluster type "git".
+                  </Typography>
+                )}
               </CardContainer>
             </>
           )
@@ -101,17 +108,20 @@ export function HumanitecCardContent({
             Resources
           </Typography>
           <CardContainer>
-            {resources
-              .filter(resource => resource.type !== 'workload')
-              .map(resource => (
-                <ResourceCard
-                  id={resource.res_id.substring(
-                    `modules.${selectedWorkload}.`.length,
-                  )}
-                  key={`${resource.res_id}:${resource.type}`}
-                  resource={resource}
-                />
-              ))}
+            {resources.map(resource => (
+              <ResourceCard
+                id={resource.res_id.substring(
+                  `modules.${selectedWorkload}.`.length,
+                )}
+                key={`${resource.res_id}:${resource.type}`}
+                resource={resource}
+              />
+            ))}
+            {resources.length === 0 && (
+              <Typography className={classes.unknownColor}>
+                No resources reported.
+              </Typography>
+            )}
           </CardContainer>
         </>
       ) : null}

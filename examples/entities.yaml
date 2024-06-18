@@ -11,10 +11,10 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-service
+  name: empty
   annotations:
     "humanitec.com/orgId": "humanitec-backstage-plugins"
-    "humanitec.com/appId": "example-service"
+    "humanitec.com/appId": "empty"
 spec:
   type: service
   lifecycle: experimental
@@ -26,7 +26,37 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-service-without
+  name: deployed
+  annotations:
+    "humanitec.com/orgId": "humanitec-backstage-plugins"
+    "humanitec.com/appId": "deployed"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
+  system: examples
+  providesApis: [example-grpc-api]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: partially-deployed
+  annotations:
+    "humanitec.com/orgId": "humanitec-backstage-plugins"
+    "humanitec.com/appId": "partially-deployed"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: guests
+  system: examples
+  providesApis: [example-grpc-api]
+---
+# https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: missing-humanitec-annotations
 spec:
   type: service
   lifecycle: experimental
