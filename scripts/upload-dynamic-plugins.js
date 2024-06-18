@@ -16,6 +16,11 @@ if (!publishedPackagesJSON) {
 const publishedPackages = JSON.parse(publishedPackagesJSON);
 
 for (const package of publishedPackages) {
+  if (package.name === '@humanitec/backstage-plugin-common') {
+    console.log(`Skipping package: ${package.name} (dependencies are shipped with the main packages)`);
+    continue;
+  }
+
   package.name += '-dynamic'
   console.log(`Publishing package: ${package.name}@${package.version}`);
 
