@@ -1,5 +1,15 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.7.0
+
+### Minor Changes
+
+- 22a6c79: Add hasHumanitecAnnotations function for conditional rendering
+
+### Patch Changes
+
+- 6574533: fix: improved status rendering
+
 ## 0.6.0
 
 ### Minor Changes
