@@ -11,20 +11,25 @@ let slowFetch = false
 const fakeAppInfo = { fake: 'res' }
 const fakeError = new Error('fake error');
 
-jest.mock('@humanitec/backstage-plugin-common', () => ({
-  createHumanitecClient: jest.fn(),
-  fetchAppInfo: jest.fn(async () => {
-    if (returnError) {
-      throw fakeError;
-    }
+jest.mock('@humanitec/backstage-plugin-common', () => {
+  const originalModule = jest.requireActual('@humanitec/backstage-plugin-common');
 
-    if (slowFetch) {
-      await setTimeout(100);
-    }
+  return {
+    createHumanitecClient: jest.fn(),
+    fetchAppInfo: jest.fn(async () => {
+      if (returnError) {
+        throw fakeError;
+      }
 
-    return fakeAppInfo;
-  }),
-}))
+      if (slowFetch) {
+        await setTimeout(100);
+      }
+
+      return fakeAppInfo;
+    }),
+    HumanitecResponseError: originalModule.HumanitecResponseError,
+  }
+});
 
 describe('AppInfoService', () => {
   afterEach(() => {
@@ -43,20 +48,20 @@ describe('AppInfoService', () => {
 
     expect(subscriber).toHaveBeenCalledTimes(1);
     expect(subscriber).toHaveBeenLastCalledWith({ id: 0, data: fakeAppInfo });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(1);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(1);
 
     await setTimeout(fetchInterval);
 
     expect(subscriber).toHaveBeenCalledTimes(2);
     expect(subscriber).toHaveBeenLastCalledWith({ id: 1, data: fakeAppInfo });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(2);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(2);
 
     close();
 
     await setTimeout(fetchInterval * 2);
 
     expect(subscriber).toHaveBeenCalledTimes(2);
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(2);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(2);
   });
 
   it('single subscriber, recovers after an error', async () => {
@@ -71,7 +76,7 @@ describe('AppInfoService', () => {
 
     expect(subscriber).toHaveBeenCalledTimes(1);
     expect(subscriber).toHaveBeenLastCalledWith({ id: 0, error: fakeError });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(1);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(1);
 
     returnError = false;
 
@@ -79,14 +84,14 @@ describe('AppInfoService', () => {
 
     expect(subscriber).toHaveBeenCalledTimes(2);
     expect(subscriber).toHaveBeenLastCalledWith({ id: 1, data: fakeAppInfo });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(2);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(2);
 
     close();
 
     await setTimeout(fetchInterval * 2);
 
     expect(subscriber).toHaveBeenCalledTimes(2);
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(2);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(2);
   });
 
   it('single subscriber, disconnects with slow fetch', async () => {
@@ -100,14 +105,14 @@ describe('AppInfoService', () => {
     await setTimeout(slowFetchTimeout / 2);
 
     expect(subscriber).toHaveBeenCalledTimes(0);
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(1);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(1);
 
     close();
 
     // Wait for two cycles to ensure that the fetch is not retried.
     await setTimeout((slowFetchTimeout + fetchInterval) * 2);
 
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(1);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(1);
   });
 
   it('two subscribers', async () => {
@@ -124,7 +129,7 @@ describe('AppInfoService', () => {
     expect(subscriber2).toHaveBeenCalledTimes(1);
     expect(subscriber1).toHaveBeenLastCalledWith({ id: 0, data: fakeAppInfo });
     expect(subscriber2).toHaveBeenLastCalledWith({ id: 0, data: fakeAppInfo });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(1);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(1);
 
     await setTimeout(fetchInterval);
 
@@ -132,7 +137,7 @@ describe('AppInfoService', () => {
     expect(subscriber1).toHaveBeenLastCalledWith({ id: 1, data: fakeAppInfo });
     expect(subscriber2).toHaveBeenCalledTimes(2);
     expect(subscriber2).toHaveBeenLastCalledWith({ id: 1, data: fakeAppInfo });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(2);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(2);
 
     close1();
 
@@ -141,7 +146,7 @@ describe('AppInfoService', () => {
     expect(subscriber1).toHaveBeenCalledTimes(2);
     expect(subscriber2).toHaveBeenCalledTimes(3);
     expect(subscriber2).toHaveBeenLastCalledWith({ id: 2, data: fakeAppInfo });
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(3);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(3);
 
     close2();
 
@@ -149,6 +154,6 @@ describe('AppInfoService', () => {
 
     expect(subscriber1).toHaveBeenCalledTimes(2);
     expect(subscriber2).toHaveBeenCalledTimes(3);
-    expect(common.createHumanitecClient).toHaveBeenCalledTimes(3);
+    expect(common.fetchAppInfo).toHaveBeenCalledTimes(3);
   });
 });

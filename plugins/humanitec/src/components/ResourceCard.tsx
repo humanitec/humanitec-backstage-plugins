@@ -97,11 +97,7 @@ export function ResourceCard({ id, resource }: ResourceCardProps) {
   );
 }
 
-function ResourceStatus({
-  status,
-}: {
-  status: 'pending' | 'active' | 'deleting';
-}) {
+function ResourceStatus({ status }: { status: string }) {
   const classes = useStyles();
 
   switch (status) {
