@@ -1,5 +1,15 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.8.0
+
+### Minor Changes
+
+- 5571b0e: Use Humanitec TS client
+
+### Patch Changes
+
+- 10c718e: Bump to Backstage v1.27
+
 ## 0.7.0
 
 ### Minor Changes

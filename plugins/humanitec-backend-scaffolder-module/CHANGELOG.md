@@ -1,5 +1,18 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.4.0
+
+### Minor Changes
+
+- 5571b0e: Use Humanitec TS client
+
+### Patch Changes
+
+- 10c718e: Bump to Backstage v1.27
+- Updated dependencies [10c718e]
+- Updated dependencies [5571b0e]
+  - @humanitec/backstage-plugin-common@0.6.0
+
 ## 0.3.0
 
 ### Minor Changes
