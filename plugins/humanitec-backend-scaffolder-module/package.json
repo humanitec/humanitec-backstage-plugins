@@ -24,7 +24,7 @@
     "postpack": "backstage-cli package postpack"
   },
   "dependencies": {
-    "@backstage/backend-plugin-api": "^0.6.18",
+    "@backstage/backend-plugin-api": "0.6.18",
     "@backstage/plugin-scaffolder-node": "^0.4.4",
     "@humanitec/backstage-plugin-common": "^0.5.1",
     "js-yaml": "^4.1.0"
