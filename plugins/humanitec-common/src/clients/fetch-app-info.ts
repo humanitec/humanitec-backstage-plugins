@@ -3,10 +3,13 @@ import { HumanitecClient } from './humanitec';
 const k8sResID = 'k8s-cluster';
 const gitClusterType = 'git';
 
-export type FetchAppInfoClient = Pick<HumanitecClient, 'getEnvironments' | 'getActiveEnvironmentResources' | 'getRuntimeInfo'>;
+export type FetchAppInfoClient = Pick<HumanitecClient, 'listEnvironments' | 'listActiveResources'| 'getRuntime'>;
 
-export async function fetchAppInfo({ client }: { client: FetchAppInfoClient; }, appId: string) {
-  const environments = await client.getEnvironments(appId);
+export async function fetchAppInfo({ client }: { client: FetchAppInfoClient; }, orgId: string, appId: string) {
+  const environments = await client.listEnvironments({
+    orgId,
+    appId,
+  })
 
   return await Promise.all(environments.map(async (env) => {
     let usesGitCluster = false
@@ -19,7 +22,11 @@ export async function fetchAppInfo({ client }: { client: FetchAppInfoClient; }, 
       };
     }
 
-    const resources = await client.getActiveEnvironmentResources(appId, env.id);
+    const resources = await client.listActiveResources({
+      orgId,
+      appId,
+      envId: env.id,
+    });
 
     // k8s-cluster of cluster_type git have no runtime information
     for (const resource of resources) {
@@ -35,7 +42,11 @@ export async function fetchAppInfo({ client }: { client: FetchAppInfoClient; }, 
       }
     }
 
-    const runtime = await client.getRuntimeInfo(appId, env.id)
+    const runtime = await client.getRuntime({
+      orgId,
+      appId,
+      envId: env.id,
+    })
 
     return {
       ...env,

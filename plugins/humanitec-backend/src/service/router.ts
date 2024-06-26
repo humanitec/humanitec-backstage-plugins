@@ -60,7 +60,7 @@ export async function createRouter(
 
     const unsubscribe = appInfoService.addSubscriber(orgId, appId, (data) => {
       if (data.error) {
-        response.write(`event: update-failure\ndata: ${data.error.message}\nid: ${data.id}\n\n`);
+        response.write(`event: update-failure\ndata: ${JSON.stringify(data.error.message)}\nid: ${data.id}\n\n`);
         logger.error(`Error encountered trying to update environment`, data.error);
       } else {
         response.write(`event: update-success\ndata: ${JSON.stringify(data.data)}\nid: ${data.id}\n\n`);

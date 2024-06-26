@@ -29,8 +29,13 @@ export function useAppInfo({ appId, orgId }: { appId: string; orgId: string }) {
         });
 
         source.addEventListener('update-failure', (message: any) => {
-          if (message.data) {
-            setData(new Error(message.data));
+          try {
+            if (message.data) {
+              setData(new Error(JSON.parse(message.data)));
+            }
+          } catch (e) {
+            // eslint-disable-next-line no-console
+            console.error(e);
           }
           source.close();
         });

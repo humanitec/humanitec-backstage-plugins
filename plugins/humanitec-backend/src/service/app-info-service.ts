@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 
-import { createHumanitecClient, fetchAppInfo } from '@humanitec/backstage-plugin-common';
+import { createHumanitecClient, fetchAppInfo, HumanitecResponseError } from '@humanitec/backstage-plugin-common';
 
 const defaultFetchInterval = 10000;
 
@@ -21,10 +21,12 @@ export class AppInfoService {
 
     private token: string;
     private fetchInterval: number;
+    private client: ReturnType<typeof createHumanitecClient>;
 
     constructor(token: string, fetchInterval = defaultFetchInterval) {
         this.token = token;
         this.fetchInterval = fetchInterval;
+        this.client = createHumanitecClient({ token: this.token });
     }
 
     addSubscriber(orgId: string, appId: string, subscriber: (data: AppInfoUpdate) => void): () => void {
@@ -54,16 +56,21 @@ export class AppInfoService {
 
     private async fetchAppInfo(orgId: string, appId: string): Promise<void> {
         const key = `${orgId}:${appId}`;
-        const client = createHumanitecClient({ token: this.token, orgId });
 
         const id = this.lastData.has(key) ? this.lastData.get(key)!.id + 1 : 0;
 
         const update: AppInfoUpdate = { id: id };
         try {
-            const data = await fetchAppInfo({ client }, appId);
+            const data = await fetchAppInfo({ client: this.client }, orgId, appId);
             update.data = data;
         } catch (error) {
-            if (error instanceof Error) {
+            if (error instanceof HumanitecResponseError) {
+                let msg = `Failed to fetch ${error.response.url} (${error.response.status})`;
+                if (!error.response.bodyUsed) {
+                    msg += `\n${await error.response.text()}`;
+                }
+                update.error = new Error(msg);
+            } else if (error instanceof Error) {
                 update.error = error;
             } else {
                 update.error = new Error(`${error}`);
