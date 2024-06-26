@@ -24,4 +24,5 @@ jobs:
       - run: yarn tsc
       - run: yarn test:all
       - run: yarn build:all
+      - run: yarn fix --check --publish
       - run: ./scripts/build-dynamic-plugins.sh
