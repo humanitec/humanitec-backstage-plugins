@@ -16,20 +16,20 @@ echo ===================================
 echo Exporting frontend plugin
 echo ===================================
 cd "$pluginDir/humanitec"
-npx --yes @janus-idp/cli@1.11.1 package export-dynamic-plugin --clean
+npx --yes @janus-idp/cli@1.13.1 package export-dynamic-plugin --clean
 echo "# @humanitec/backstage-plugin-dynamic$dynamicReadmeHeader$(cat ./dist-dynamic/README.md)" > ./dist-dynamic/README.md
 npm pack ./dist-dynamic --pack-destination "$outputDir"
 echo ===================================
 echo Exporting backend plugin
 echo ===================================
 cd "$pluginDir/humanitec-backend"
-npx --yes @janus-idp/cli@1.11.1 package export-dynamic-plugin --clean
+npx --yes @janus-idp/cli@1.13.1 package export-dynamic-plugin --clean
 echo "# @humanitec/backstage-plugin-backend-dynamic$dynamicReadmeHeader$(cat ./dist-dynamic/README.md)" > ./dist-dynamic/README.md
 npm pack ./dist-dynamic --pack-destination "$outputDir"
 echo ===================================
 echo Exporting backend scaffolder module
 echo ===================================
 cd "$pluginDir/humanitec-backend-scaffolder-module"
-npx --yes @janus-idp/cli@1.11.1 package export-dynamic-plugin --clean
+npx --yes @janus-idp/cli@1.13.1 package export-dynamic-plugin --clean
 echo "# @humanitec/backstage-plugin-scaffolder-backend-module-dynamic$dynamicReadmeHeader $(cat ./dist-dynamic/README.md)" > ./dist-dynamic/README.md
 npm pack ./dist-dynamic --pack-destination "$outputDir"
