@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-common
 
+## 0.7.0
+
+### Minor Changes
+
+- 2f5986a: Bump to Backstage v1.29
+
 ## 0.6.0
 
 ### Minor Changes

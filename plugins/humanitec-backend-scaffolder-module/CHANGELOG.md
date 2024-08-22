@@ -1,5 +1,16 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.5.0
+
+### Minor Changes
+
+- 2f5986a: Bump to Backstage v1.29
+
+### Patch Changes
+
+- Updated dependencies [2f5986a]
+  - @humanitec/backstage-plugin-common@0.7.0
+
 ## 0.4.0
 
 ### Minor Changes
