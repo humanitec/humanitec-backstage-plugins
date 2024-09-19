@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-common
 
+## 0.7.1
+
+### Patch Changes
+
+- 05fa5f4: Upgrade backstage to 1.30.2
+
 ## 0.7.0
 
 ### Minor Changes
