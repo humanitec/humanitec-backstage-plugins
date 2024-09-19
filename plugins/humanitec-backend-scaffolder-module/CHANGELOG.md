@@ -1,5 +1,13 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.5.1
+
+### Patch Changes
+
+- 05fa5f4: Upgrade backstage to 1.30.2
+- Updated dependencies [05fa5f4]
+  - @humanitec/backstage-plugin-common@0.7.1
+
 ## 0.5.0
 
 ### Minor Changes
