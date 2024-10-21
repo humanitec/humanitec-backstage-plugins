@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.9.4
+
+### Patch Changes
+
+- 443b617: backstage 1.31.3 -> 1.32.2; update dependencies
+
 ## 0.9.3
 
 ### Patch Changes
