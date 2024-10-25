@@ -1,5 +1,13 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.5.4
+
+### Patch Changes
+
+- ac254e9: Update dependencies
+- Updated dependencies [ac254e9]
+  - @humanitec/backstage-plugin-common@0.7.4
+
 ## 0.5.3
 
 ### Patch Changes

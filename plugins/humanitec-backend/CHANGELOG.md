@@ -1,5 +1,13 @@
 # @frontside/backstage-plugin-humanitec-backend
 
+## 0.8.4
+
+### Patch Changes
+
+- ac254e9: Update dependencies
+- Updated dependencies [ac254e9]
+  - @humanitec/backstage-plugin-common@0.7.4
+
 ## 0.8.3
 
 ### Patch Changes
