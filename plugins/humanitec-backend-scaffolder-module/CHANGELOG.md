@@ -1,5 +1,13 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+## 0.5.5
+
+### Patch Changes
+
+- 67dfcf4: Update cross-spawn dependency to address CVE-2024-21538.
+- Updated dependencies [67dfcf4]
+  - @humanitec/backstage-plugin-common@0.7.5
+
 ## 0.5.4
 
 ### Patch Changes
