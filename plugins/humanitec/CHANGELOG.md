@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec
 
+## 0.9.6
+
+### Patch Changes
+
+- 67dfcf4: Update cross-spawn dependency to address CVE-2024-21538.
+
 ## 0.9.5
 
 ### Patch Changes
