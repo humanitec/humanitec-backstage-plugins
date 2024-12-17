@@ -41,7 +41,8 @@
     "lerna": "^7.3.0",
     "node-gyp": "^9.0.0",
     "prettier": "^2.3.2",
-    "typescript": "~5.3.0"
+    "typescript": "~5.3.0",
+    "express": "^4.21.2"
   },
   "resolutions": {
     "@azure/storage-blob": "12.18.0",
