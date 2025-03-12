@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
 
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --immutable
       - run: yarn lint:all
       - run: yarn tsc
       - run: yarn test:all
