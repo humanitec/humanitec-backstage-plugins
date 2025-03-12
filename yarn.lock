@@ -5459,10 +5459,10 @@
     ws "*"
     xtend "^4.0.0"
 
-"@humanitec/autogen@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@humanitec/autogen/-/autogen-0.1.0.tgz#d9f2db5f086bfbb508ef25923e4196905e93fa34"
-  integrity sha512-uXfOPwU6v7maXXLA61H8bg7I04V7fvzoEN5WCFAZooHo9+3gCMvRUSkkVl4Up584pjsAFJ1U92mMQ+9eZwMMQQ==
+"@humanitec/autogen@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@humanitec/autogen/-/autogen-0.1.1.tgz#765c46eff65b5b9a84c3f3e1e33f2b3faadcb828"
+  integrity sha512-BPA+Se2V/vN89LwyKIDoO0GI0KPUQ4iPSjV1mUh+3+zVoq+aUWZMR2KoaEUaX/+un4UvtKRJiwlmTDz/A3gB8w==
 
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
