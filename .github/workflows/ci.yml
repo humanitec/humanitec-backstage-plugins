@@ -19,6 +19,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Enable Corepack
+        run: corepack enable
+        
       - run: yarn install --immutable
       - run: yarn lint:all
       - run: yarn tsc
