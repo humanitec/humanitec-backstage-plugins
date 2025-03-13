@@ -33,7 +33,7 @@
     "@humanitec/backstage-plugin-common": "^0.7.5",
     "@types/express": "*",
     "cross-fetch": "^4.0.0",
-    "express": "^4.17.1",
+    "express": "^4.21.2",
     "express-promise-router": "^4.1.0",
     "node-fetch": "^2.6.7",
     "winston": "^3.2.1",

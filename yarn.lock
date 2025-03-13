@@ -6917,7 +6917,7 @@ __metadata:
     "@types/express": "npm:*"
     "@types/supertest": "npm:^2.0.8"
     cross-fetch: "npm:^4.0.0"
-    express: "npm:^4.17.1"
+    express: "npm:^4.21.2"
     express-promise-router: "npm:^4.1.0"
     msw: "npm:^1.0.0"
     node-fetch: "npm:^2.6.7"
@@ -12688,7 +12688,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express-serve-static-core@npm:^4.17.33, @types/express-serve-static-core@npm:^4.17.5":
+"@types/express-serve-static-core@npm:^4.17.33, @types/express-serve-static-core@npm:^4.17.5, @types/express-serve-static-core@npm:^4.19.5":
   version: 4.19.6
   resolution: "@types/express-serve-static-core@npm:4.19.6"
   dependencies:
@@ -15003,13 +15003,13 @@ __metadata:
     "@humanitec/backstage-plugin-backend": "npm:^0.8.5"
     "@humanitec/backstage-plugin-scaffolder-backend-module": "npm:^0.5.5"
     "@types/dockerode": "npm:^3.3.0"
-    "@types/express": "npm:^4.17.6"
-    "@types/express-serve-static-core": "npm:^4.17.5"
+    "@types/express": "npm:^4.17.21"
+    "@types/express-serve-static-core": "npm:^4.19.5"
     "@types/luxon": "npm:^2.0.4"
     app: "link:../app"
     better-sqlite3: "npm:^9.0.0"
     dockerode: "npm:^3.3.1"
-    express: "npm:^4.19.2"
+    express: "npm:^4.21.2"
     node-gyp: "npm:^9.0.0"
     pg: "npm:^8.11.3"
     winston: "npm:^3.2.1"
