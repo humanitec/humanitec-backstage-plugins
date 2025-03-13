@@ -50,7 +50,9 @@
     "jsonpath-plus": "^10.0.0",
     "cookie": "^0.7.0",
     "cross-spawn": "^7.0.5",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "koa": "2.15.4",
+    "elliptic": "6.6.1"
   },
   "prettier": "@spotify/prettier-config",
   "lint-staged": {
