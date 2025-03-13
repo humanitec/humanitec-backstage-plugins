@@ -21,8 +21,8 @@ jobs:
 
       - name: Enable Corepack
         run: corepack enable
-        
-      - run: yarn install --immutable
+
+      - run: yarn install
       - run: yarn lint:all
       - run: yarn tsc
       - run: yarn test:all
