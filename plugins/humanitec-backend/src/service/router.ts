@@ -16,8 +16,7 @@
 
 import { Config } from '@backstage/config';
 import { errorHandler } from '@backstage/backend-common';
-import express from 'express';
-import Router from 'express-promise-router';
+import express, { Router }  from 'express';
 import { Logger } from 'winston';
 import { AppInfoService } from './app-info-service';
 
