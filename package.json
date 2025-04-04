@@ -51,8 +51,9 @@
     "cookie": "^0.7.0",
     "cross-spawn": "^7.0.5",
     "express": "^4.21.2",
-    "koa": "2.15.4",
-    "elliptic": "6.6.1"
+    "koa": "^2.15.4",
+    "elliptic": "^6.6.1",
+    "tar-fs": "^2.1.2"
   },
   "prettier": "@spotify/prettier-config",
   "lint-staged": {
