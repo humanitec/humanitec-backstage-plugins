@@ -1,5 +1,11 @@
 # @frontside/backstage-plugin-humanitec-common
 
+## 0.7.6
+
+### Patch Changes
+
+- 12f1876: Update dependencies
+
 ## 0.7.5
 
 ### Patch Changes
