@@ -18,11 +18,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: corepack yarn install --immutable
-      - run: corepack yarn lint:all
-      - run: corepack yarn tsc
-      - run: corepack yarn test:all
-      - run: corepack yarn build:all
-      - run: corepack yarn fix --check --publish
+      - run: yarn install --immutable
+      - run: yarn lint:all
+      - run: yarn tsc
+      - run: yarn test:all
+      - run: yarn build:all
+      - run: yarn fix --check --publish
 
       - run: ./scripts/build-dynamic-plugins.sh
