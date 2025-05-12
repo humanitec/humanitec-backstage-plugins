@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: yarn workspaces focus --all --production
+      - run: yarn workspaces focus --all
       - run: yarn lint:all
       - run: yarn tsc
       - run: yarn test:all
