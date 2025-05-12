@@ -18,13 +18,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
 
-      - run: yarn install --frozen-lockfile
+      - run: corepack yarn install --immutable
 
-      - run: yarn tsc
+      - run: corepack yarn tsc
 
-      - run: yarn build:all
+      - run: corepack yarn build:all
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
