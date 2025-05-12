@@ -23,7 +23,7 @@ echo ===================================
 echo Exporting backend plugin
 echo ===================================
 cd "$pluginDir/humanitec-backend"
-npx --yes @janus-idp/cli@1.13.1 package export-dynamic-plugin --clean
+YARN_ENABLE_IMMUTABLE_INSTALLS=false npx --yes @janus-idp/cli@1.13.1 package export-dynamic-plugin --clean
 echo "# @humanitec/backstage-plugin-backend-dynamic$dynamicReadmeHeader$(cat ./dist-dynamic/README.md)" > ./dist-dynamic/README.md
 npm pack ./dist-dynamic --pack-destination "$outputDir"
 echo ===================================
