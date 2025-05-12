@@ -1,6 +1,6 @@
 import type { FetchAppInfoEnvironment } from '@humanitec/backstage-plugin-common';
 import { Box, Typography } from '@material-ui/core';
-
+import { default as React } from 'react';
 import { useStyles } from '../hooks/useStyles';
 
 type Resource = FetchAppInfoEnvironment['resources'][0];
