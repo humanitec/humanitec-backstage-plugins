@@ -57,7 +57,7 @@
     "express": "^4.21.2",
     "koa": "^2.15.4",
     "prismjs": "^1.30.0",
-    "tar-fs": "^2.1.2",
+    "tar-fs": "^2.1.2"
   },
   "prettier": "@spotify/prettier-config",
   "lint-staged": {
