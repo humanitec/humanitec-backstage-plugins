@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
 
-      - run: corepack yarn install --frozen-lockfile
+      - run: corepack yarn install --immutable
       - run: corepack yarn lint:all
       - run: corepack yarn tsc
       - run: corepack yarn test:all
