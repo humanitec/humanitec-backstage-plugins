@@ -19,10 +19,10 @@ jobs:
         with:
           node-version: 20
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn lint:all
-      - run: yarn tsc
-      - run: yarn test:all
-      - run: yarn build:all
-      - run: yarn fix --check --publish
+      - run: corepack yarn install --frozen-lockfile
+      - run: corepack yarn lint:all
+      - run: corepack yarn tsc
+      - run: corepack yarn test:all
+      - run: corepack yarn build:all
+      - run: corepack yarn fix --check --publish
       - run: ./scripts/build-dynamic-plugins.sh
