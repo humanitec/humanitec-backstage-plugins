@@ -1,4 +1,4 @@
-import { default as React } from 'react';
+
 import { createDevApp } from '@backstage/dev-utils';
 import { humanitecPlugin } from '../src/plugin';
 

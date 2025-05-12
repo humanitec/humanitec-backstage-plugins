@@ -1,7 +1,7 @@
 import type { FetchAppInfoResponse } from '@humanitec/backstage-plugin-common';
 import { LinearProgress, Typography } from '@material-ui/core';
 import get from 'lodash.get';
-import { default as React } from 'react';
+
 import { HumanitecParamsActions } from '../hooks/useHumanitecParams';
 import { useStyles } from '../hooks/useStyles';
 import { CardContainer } from './CardContainer';
