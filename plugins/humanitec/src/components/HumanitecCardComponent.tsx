@@ -1,7 +1,7 @@
 import { useEntity } from '@backstage/plugin-catalog-react';
 import { Button, Card, CardContent, Divider } from '@material-ui/core';
 import CardHeader from '@material-ui/core/CardHeader';
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 import { Entity } from '@backstage/catalog-model';
 import {
   HUMANITEC_APP_ID_ANNOTATION,

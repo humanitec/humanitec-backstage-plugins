@@ -1,5 +1,4 @@
 import SvgIcon, { SvgIconProps } from "@material-ui/core/SvgIcon";
-import React from "react";
 
 export function HumanitecLogoIcon(props: SvgIconProps) {
   return (

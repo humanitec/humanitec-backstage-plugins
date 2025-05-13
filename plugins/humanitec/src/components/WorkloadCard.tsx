@@ -1,5 +1,5 @@
 import { Box, Typography } from '@material-ui/core';
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import { useStyles } from '../hooks/useStyles';
 
 interface Workload {
@@ -18,7 +18,7 @@ interface WorkloadCardProps {
 export function WorkloadCard({ workload, onClick, active }: WorkloadCardProps) {
   const classes = useStyles();
 
-  const _onClick = useCallback(() => onClick(workload.id), [workload, onClick]) 
+  const _onClick = useCallback(() => onClick(workload.id), [workload, onClick])
 
   return (
     <Box role="button" className={`${classes.miniCard} ${active && classes.environmentCardActive}`} onClick={_onClick}>
