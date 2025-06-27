@@ -20,11 +20,10 @@ jobs:
         with:
           node-version: 20
 
-      - run: corepack yarn install --immutable
-
-      - run: corepack yarn tsc
-
-      - run: corepack yarn build:all
+      - run: corepack enable
+      - run: yarn install --immutable
+      - run: yarn tsc
+      - run: yarn build:all
 
       - name: Create Release Pull Request or Publish to npm
         id: changesets
