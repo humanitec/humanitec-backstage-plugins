@@ -6655,7 +6655,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanitec/autogen@npm:^0.1.0":
+"@humanitec/autogen@npm:^0.1.1":
   version: 0.1.1
   resolution: "@humanitec/autogen@npm:0.1.1"
   checksum: 10c0/bf128284de36b5dcea7e2024d3abe030fcd8b54d81cff46b096514fa82e83191f4014e23e085456d565c6617e8447dce2eef1b025b26c266be1e65c703e2d8f3
@@ -6689,7 +6689,7 @@ __metadata:
   resolution: "@humanitec/backstage-plugin-common@workspace:plugins/humanitec-common"
   dependencies:
     "@backstage/cli": "npm:^0.33.1"
-    "@humanitec/autogen": "npm:^0.1.0"
+    "@humanitec/autogen": "npm:^0.1.1"
     cross-fetch: "npm:^4.0.0"
     exponential-backoff: "npm:^3.1.0"
   languageName: unknown
