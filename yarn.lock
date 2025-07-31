@@ -6603,10 +6603,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@humanitec/autogen@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@humanitec/autogen@npm:0.1.0"
-  checksum: 10c0/5d6b1667c9f25dd93600feb34ecc1302939d8822e026f4fa38bb3c267eb15d07340e6619bb072ffa6dbc12be2a499cf24e37af429c1a62864a3932e78560fbc8
+"@humanitec/autogen@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@humanitec/autogen@npm:0.1.1"
+  checksum: 10c0/bf128284de36b5dcea7e2024d3abe030fcd8b54d81cff46b096514fa82e83191f4014e23e085456d565c6617e8447dce2eef1b025b26c266be1e65c703e2d8f3
   languageName: node
   linkType: hard
 
@@ -6637,7 +6637,7 @@ __metadata:
   resolution: "@humanitec/backstage-plugin-common@workspace:plugins/humanitec-common"
   dependencies:
     "@backstage/cli": "npm:^0.33.1"
-    "@humanitec/autogen": "npm:^0.1.0"
+    "@humanitec/autogen": "npm:^0.1.1"
     cross-fetch: "npm:^4.0.0"
     exponential-backoff: "npm:^3.1.0"
   languageName: unknown
