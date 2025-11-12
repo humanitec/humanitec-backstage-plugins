@@ -1,4 +1,4 @@
-# @frontside/backstage-plugin-humanitec-backend
+# @humanitec/backstage-plugin-backend
 
 ## 0.8.6
 
