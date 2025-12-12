@@ -7141,7 +7141,7 @@ __metadata:
     express: "npm:^4.17.1"
     express-promise-router: "npm:^4.1.0"
     msw: "npm:^1.0.0"
-    node-fetch: "npm:^2.6.7"
+    node-fetch: "npm:^3.3.2"
     supertest: "npm:^6.2.4"
     winston: "npm:^3.2.1"
     yn: "npm:^4.0.0"
