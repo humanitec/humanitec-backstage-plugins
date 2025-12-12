@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@changesets/cli": "^2.27.1",
-    "@types/react": "^18",
+    "@types/react": "^19",
     "@types/react-dom": "^18"
   },
   "packageManager": "yarn@4.9.1"
