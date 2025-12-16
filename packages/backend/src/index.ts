@@ -12,8 +12,8 @@ const backend = createBackend();
 
 backend.add(import('@backstage/plugin-app-backend'));
 backend.add(import('@backstage/plugin-proxy-backend'));
-backend.add(import('@backstage/plugin-scaffolder-backend/alpha'));
-backend.add(import('@backstage/plugin-techdocs-backend/alpha'));
+backend.add(import('@backstage/plugin-scaffolder-backend'));
+backend.add(import('@backstage/plugin-techdocs-backend'));
 
 // auth plugin
 backend.add(import('@backstage/plugin-auth-backend'));
@@ -28,15 +28,15 @@ backend.add(
 );
 
 // permission plugin
-backend.add(import('@backstage/plugin-permission-backend/alpha'));
+backend.add(import('@backstage/plugin-permission-backend'));
 backend.add(
   import('@backstage/plugin-permission-backend-module-allow-all-policy'),
 );
 
 // search plugin
-backend.add(import('@backstage/plugin-search-backend/alpha'));
+backend.add(import('@backstage/plugin-search-backend'));
 backend.add(import('@backstage/plugin-search-backend-module-catalog'));
-backend.add(import('@backstage/plugin-search-backend-module-techdocs/alpha'));
+backend.add(import('@backstage/plugin-search-backend-module-techdocs'));
 
 // humanitec
 backend.add(import('@humanitec/backstage-plugin-backend'));

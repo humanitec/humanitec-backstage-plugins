@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { loggerToWinstonLogger } from '@backstage/backend-common';
 import {
   coreServices,
   createBackendPlugin,
@@ -37,7 +36,7 @@ export const humanitecPlugin = createBackendPlugin({
       async init({ httpRouter, logger, config }) {
         httpRouter.use(
           await createRouter({
-            logger: loggerToWinstonLogger(logger),
+            logger,
             config,
           }),
         );
