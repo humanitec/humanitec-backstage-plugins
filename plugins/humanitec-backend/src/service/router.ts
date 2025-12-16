@@ -15,14 +15,14 @@
  */
 
 import { Config } from '@backstage/config';
-import { errorHandler } from '@backstage/backend-common';
+import { LoggerService } from '@backstage/backend-plugin-api';
+import { MiddlewareFactory } from '@backstage/backend-defaults/rootHttpRouter';
 import express from 'express';
 import Router from 'express-promise-router';
-import { Logger } from 'winston';
 import { AppInfoService } from './app-info-service';
 
 export interface RouterOptions {
-  logger: Logger;
+  logger: LoggerService;
   config: Config;
 }
 
@@ -72,7 +72,8 @@ export async function createRouter(
     request.on('close', () => unsubscribe());
   });
 
-  router.use(errorHandler());
+  const middleware = MiddlewareFactory.create({ logger, config });
+  router.use(middleware.error());
   return router;
 }
 
