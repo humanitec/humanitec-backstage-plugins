@@ -17,7 +17,7 @@ import {
   createBackendModule,
   coreServices,
 } from '@backstage/backend-plugin-api';
-import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-node/alpha';
+import { scaffolderActionsExtensionPoint } from '@backstage/plugin-scaffolder-node';
 import { createHumanitecApp } from './actions/create-app';
 import { createGetEnvironmentAction } from './actions/get-environment';
 
