@@ -1,4 +1,4 @@
-import { TemplateAction, createTemplateAction } from '@backstage/plugin-scaffolder-node';
+import { createTemplateAction } from '@backstage/plugin-scaffolder-node';
 import { stat, readFile } from 'fs/promises';
 import { join, resolve } from 'path';
 import { loadAll } from 'js-yaml';
@@ -17,19 +17,15 @@ interface HumanitecCreateApp {
   token: string;
 }
 
-export function createHumanitecApp({ token, orgId }: HumanitecCreateApp): TemplateAction<any, any> {
-  return createTemplateAction<{ appId: string; setupFile: string; }>({
+export function createHumanitecApp({ token, orgId }: HumanitecCreateApp) {
+  return createTemplateAction({
     id: 'humanitec:create-app',
+    description: 'Creates a Humanitec application from a setup file',
     schema: {
       input: {
-        required: ['appId'],
-        type: 'object',
-        properties: {
-          setupFile: {
-            type: 'string',
-          }
-        },
-      }
+        appId: z => z.string().describe('The application ID'),
+        setupFile: z => z.string().optional().describe('Path to the setup YAML file'),
+      },
     },
     async handler(ctx) {
       const { input, workspacePath, logger } = ctx;
@@ -41,9 +37,9 @@ export function createHumanitecApp({ token, orgId }: HumanitecCreateApp): Templa
       let setupFileContent: unknown[] | null;
       try {
         setupFileContent = await loadSetupFile(setupFilePath);
-        logger.info("Succesfully loadded contents of setup file.");
+        logger.info("Successfully loaded contents of setup file.");
       } catch (e) {
-        logger.error(e);
+        logger.error(String(e));
         return;
       }
 
@@ -58,7 +54,7 @@ export function createHumanitecApp({ token, orgId }: HumanitecCreateApp): Templa
           logger.info(`Created ${app.name} with ${app.id}`)
         } catch (e) {
           logger.error(`Failed to create app ${app.id} with name ${app.name}`)
-          logger.debug(e);
+          logger.debug(String(e));
           continue;
         }
       }
