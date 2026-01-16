@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
 
+permissions:
+  id-token: write # Used by npm Trusted Publishing
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,11 +38,8 @@ jobs:
           publish: yarn release:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - run: ./scripts/build-dynamic-plugins.sh
 
       - name: Upload dynamic plugin to release
         run: ./scripts/upload-dynamic-plugins.js '${{ steps.changesets.outputs.publishedPackages }}'
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
