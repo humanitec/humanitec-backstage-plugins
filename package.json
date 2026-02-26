@@ -45,6 +45,7 @@
   },
   "resolutions": {
     "@azure/storage-blob": "12.18.0",
+    "@backstage/backend-defaults": "^0.14.1",
     "@kubernetes/client-node": "^1.0",
     "@octokit/endpoint": "^9.0.6",
     "@octokit/plugin-paginate-rest": "^11.4.1",
