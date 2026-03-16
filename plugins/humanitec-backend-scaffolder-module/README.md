@@ -1,5 +1,11 @@
 # @humanitec/backstage-plugin-scaffolder-backend-module
 
+> [!WARNING]
+> The Humanitec Backstage plugin continues to work with Humanitec v1, but is no longer
+> maintained. Of note, it is not compatible with v2.
+>
+> A Backstage plugin for Humanitec Platform Orchestrator (v2) is on our roadmap.
+
 `@humanitec/backstage-plugin-scaffolder-backend-module` is a new backend system module to add the humanitec action in the scaffolder
 
 ## Scaffolder Actions
