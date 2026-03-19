@@ -1,5 +1,11 @@
 # humanitec-backstage-plugins
 
+> [!WARNING]
+> The Humanitec Backstage plugin continues to work with Humanitec v1, but is no longer
+> maintained. Of note, it is not compatible with v2.
+>
+> A Backstage plugin for Humanitec Platform Orchestrator (v2) is on our roadmap.
+
 This repository contains [Backstage](https://backstage.io/) plugins to interact with the [Humanitec Platform Orchestrator](https://developer.humanitec.com/platform-orchestrator/overview/) from your Backstage Portal.
 
 * [humanitec](./plugins/humanitec) Show workloads, environments and resources deployed by Humanitec Platform Orchestrator.

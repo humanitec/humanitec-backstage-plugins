@@ -1,5 +1,11 @@
 # @humanitec/backstage-plugin
 
+> [!WARNING]
+> The Humanitec Backstage plugin continues to work with Humanitec v1, but is no longer
+> maintained. Of note, it is not compatible with v2.
+>
+> A Backstage plugin for Humanitec Platform Orchestrator (v2) is on our roadmap.
+
 `@humanitec/backstage-plugin` is a plugin for the Backstage frontend app. It shows information about environments, workloads and resources on an entity page.
 
 ![screenshot](./screenshot.png)

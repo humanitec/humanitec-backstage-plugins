@@ -1,5 +1,11 @@
 # @humanitec/backstage-plugin-backend
 
+> [!WARNING]
+> The Humanitec Backstage plugin continues to work with Humanitec v1, but is no longer
+> maintained. Of note, it is not compatible with v2.
+>
+> A Backstage plugin for Humanitec Platform Orchestrator (v2) is on our roadmap.
+
 `@humanitec/backstage-plugin-backend` is a plugin for the Backstage backend app. It provides a route that `@humanitec/backstage-plugin` will use to connect to Humanitec API.
 
 ## Installation
